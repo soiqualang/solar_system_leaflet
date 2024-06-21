@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Solar System Map</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position: absolute; top:0; bottom:0; right:0; left:0; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Create the map and set the view to an initial location and zoom level
+        var map = L.map('map', {
+            crs: L.CRS.Simple,
+            minZoom: -5
+        });
+
+        // Define the dimensions of the map
+        var width = 10000;  // You can adjust these values based on the scale
+        var height = 1000;
+        var bounds = [[0, 0], [height, width]];
+
+        // Define the dimensions of the Solar System
+        var solarSystemWidth = width;
+        var solarSystemHeight = height;
+
+        // Define the scale factor for distances and sizes
+        var distanceScale = 0.1; // This should be chosen to fit the map dimensions
+        var sizeScale = 0.1;     // This should be chosen to fit the map dimensions
+
+        // Adding the Sun to the map
+        var sunRadius = 50; // Adjusted for display
+        var sunIcon = L.divIcon({
+            className: 'sun-icon',
+            html: '<div style="background: yellow; border-radius: 50%; width: ' + (sunRadius * 2) + 'px; height: ' + (sunRadius * 2) + 'px;"></div>',
+            iconSize: [sunRadius * 2, sunRadius * 2]
+        });
+        L.marker([height / 2, sunRadius], { icon: sunIcon }).addTo(map).bindPopup('Sun');
+
+        // Function to add planets and their orbits
+        function addPlanet(name, distanceFromSun, radius, moons) {
+            var planetIcon = L.divIcon({
+                className: 'planet-icon',
+                html: '<div style="background: blue; border-radius: 50%; width: ' + (radius * 2) + 'px; height: ' + (radius * 2) + 'px;"></div>',
+                iconSize: [radius * 2, radius * 2]
+            });
+            var planetPosition = [height / 2, sunRadius + distanceFromSun];
+            L.marker(planetPosition, { icon: planetIcon }).addTo(map).bindPopup(name);
+
+            // Add the orbit of the planet
+            L.circle([height / 2, sunRadius], {
+                color: 'white',
+                dashArray: '5, 5',
+                fillOpacity: 0,
+                radius: distanceFromSun
+            }).addTo(map);
+
+            // Add moons and their orbits
+            if (moons) {
+                moons.forEach(moon => {
+                    var moonIcon = L.divIcon({
+                        className: 'moon-icon',
+                        html: '<div style="background: gray; border-radius: 50%; width: ' + (moon.radius * 2) + 'px; height: ' + (moon.radius * 2) + 'px;"></div>',
+                        iconSize: [moon.radius * 2, moon.radius * 2]
+                    });
+                    var moonPosition = [height / 2, sunRadius + distanceFromSun + moon.distance];
+                    L.marker(moonPosition, { icon: moonIcon }).addTo(map).bindPopup(moon.name);
+
+                    // Add the orbit of the moon
+                    L.circle(planetPosition, {
+                        color: 'gray',
+                        dashArray: '3, 3',
+                        fillOpacity: 0,
+                        radius: moon.distance
+                    }).addTo(map);
+                });
+            }
+        }
+
+        // Add planets with real-world scaled distances and sizes (adjusted for display)
+        addPlanet('Mercury', 57.9 * distanceScale, 0.383 * sunRadius * sizeScale);
+        addPlanet('Venus', 108.2 * distanceScale, 0.949 * sunRadius * sizeScale);
+        addPlanet('Earth', 149.6 * distanceScale, 1.0 * sunRadius * sizeScale, [
+            { name: 'Moon', distance: 0.384 * distanceScale, radius: 0.273 * sunRadius * sizeScale }
+        ]);
+        addPlanet('Mars', 227.9 * distanceScale, 0.532 * sunRadius * sizeScale, [
+            { name: 'Phobos', distance: 0.0009 * distanceScale, radius: 0.012 * sunRadius * sizeScale },
+            { name: 'Deimos', distance: 0.0023 * distanceScale, radius: 0.006 * sunRadius * sizeScale }
+        ]);
+        addPlanet('Jupiter', 778.5 * distanceScale, 11.21 * sunRadius * sizeScale);
+        addPlanet('Saturn', 1433.5 * distanceScale, 9.45 * sunRadius * sizeScale);
+        addPlanet('Uranus', 2872.5 * distanceScale, 4.01 * sunRadius * sizeScale);
+        addPlanet('Neptune', 4495.1 * distanceScale, 3.88 * sunRadius * sizeScale);
+
+        // Set the map view to Earth's position
+        var earthDistanceFromSun = 149.6 * distanceScale;
+        map.setView([height / 2, sunRadius + earthDistanceFromSun], 0);
+    </script>
+</body>
+</html>

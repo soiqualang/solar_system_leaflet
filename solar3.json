@@ -1,0 +1,370 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sun",
+        "type": "Star"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          generateCircleCoordinates(0, 0, 50, 100)
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mercury",
+        "type": "Planet"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          generateCircleCoordinates(57.9, 0, 0.5, 100)
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Venus",
+        "type": "Planet"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          generateCircleCoordinates(108.2, 0, 1, 100)
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Earth",
+        "type": "Planet"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          generateCircleCoordinates(149.6, 0, 1, 100)
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Moon",
+        "type": "Moon"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          generateCircleCoordinates(149.6 + 0.384, 0, 0.27, 100)
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mars",
+        "type": "Planet"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          generateCircleCoordinates(227.9, 0, 0.5, 100)
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Phobos",
+        "type": "Moon"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          generateCircleCoordinates(227.9 + 0.009, 0, 0.006, 100)
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Deimos",
+        "type": "Moon"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          generateCircleCoordinates(227.9 + 0.023, 0, 0.003, 100)
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Jupiter",
+        "type": "Planet"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          generateCircleCoordinates(778.5, 0, 11, 100)
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Saturn",
+        "type": "Planet"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          generateCircleCoordinates(1433.5, 0, 9, 100)
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Uranus",
+        "type": "Planet"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          generateCircleCoordinates(2872.5, 0, 4, 100)
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Neptune",
+        "type": "Planet"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          generateCircleCoordinates(4495.1, 0, 4, 100)
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ceres",
+        "type": "Dwarf Planet"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          generateCircleCoordinates(413.7, 0, 0.08, 100)
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pluto",
+        "type": "Dwarf Planet"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          generateCircleCoordinates(5906.4, 0, 0.2, 100)
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Haumea",
+        "type": "Dwarf Planet"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          generateCircleCoordinates(7779.2, 0, 0.2, 100)
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Makemake",
+        "type": "Dwarf Planet"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          generateCircleCoordinates(9041.2, 0, 0.2, 100)
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Eris",
+        "type": "Dwarf Planet"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          generateCircleCoordinates(14459.5, 0, 0.2, 100)
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mercury Orbit",
+        "type": "Orbit"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": generateCircleCoordinates(0, 0, 57.9, 100)
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Venus Orbit",
+        "type": "Orbit"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": generateCircleCoordinates(0, 0, 108.2, 100)
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Earth Orbit",
+        "type": "Orbit"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": generateCircleCoordinates(0, 0, 149.6, 100)
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mars Orbit",
+        "type": "Orbit"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": generateCircleCoordinates(0, 0, 227.9, 100)
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Jupiter Orbit",
+        "type": "Orbit"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": generateCircleCoordinates(0, 0, 778.5, 100)
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Saturn Orbit",
+        "type": "Orbit"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": generateCircleCoordinates(0, 0, 1433.5, 100)
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Uranus Orbit",
+        "type": "Orbit"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": generateCircleCoordinates(0, 0, 2872.5, 100)
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Neptune Orbit",
+        "type": "Orbit"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": generateCircleCoordinates(0, 0, 4495.1, 100)
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ceres Orbit",
+        "type": "Orbit"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": generateCircleCoordinates(0, 0, 413.7, 100)
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pluto Orbit",
+        "type": "Orbit"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": generateCircleCoordinates(0, 0, 5906.4, 100)
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Haumea Orbit",
+        "type": "Orbit"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": generateCircle_coordinates(0, 0, 7779.2, 100)
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Makemake Orbit",
+        "type": "Orbit"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": generateCircle_coordinates(0, 0, 9041.2, 100)
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Eris Orbit",
+        "type": "Orbit"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": generateCircle_coordinates(0, 0, 14459.5, 100)
+      }
+    }
+  ]
+}
+
